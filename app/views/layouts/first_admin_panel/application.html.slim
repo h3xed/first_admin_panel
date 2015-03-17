@@ -1,0 +1,63 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    title FirstAdminPanel
+    meta content="width=device-width, maximum-scale=1.0, user-scalable=yes" name="viewport"
+    link href='/favicon.ico' rel="shortcut icon" type="image/x-icon"
+    = stylesheet_link_tag "first_admin_panel/application"
+    = javascript_include_tag "first_admin_panel/application"
+    = csrf_meta_tags
+  body
+    /! header
+    header#header.navbar
+      /- if current_user
+        ul.nav.navbar-nav.navbar-avatar.pull-right
+          li.dropdown
+            a.dropdown-toggle data-toggle="dropdown" href="#"
+              span.hidden-xs-only = current_user.display_name
+              - if current_user.avatar?
+                span.thumb-small.avatar.inline
+                  = image_tag current_user.avatar.medium, class: 'img-circle'
+              b.caret.hidden-xs-only
+            |  
+            ul.dropdown-menu
+              li= link_to 'Профиль', edit_admin_user_path(current_user)
+              li= link_to 'Выйти', destroy_user_session_path, method: :delete
+      = link_to 'FirstAdminPanel', admin_root_path, class: 'navbar-brand'
+      ul.nav.navbar-nav.hidden-xs
+        li
+          .m-t-small
+            a.btn.btn-sm.btn-info href="/"
+              i.icon-external-link
+              | Перейти на сайт
+      button.btn.btn-link.pull-left.nav-toggle.visible-xs data-target="body" data-toggle="class:slide-nav slide-nav-left" type="button"
+        i.icon-reorder.icon-xlarge.text-default
+    /! / header
+
+    /! nav
+    nav#nav.nav-primary.hidden-xs.nav-vertical
+      ul.nav data-offset-top="50" data-spy="affix"
+        = render partial: 'first_admin_panel/navigation'
+    /! / nav
+
+    section#content
+      section.main.padder.m-t
+        - if flash.present?
+          .flashes style="padding-top: 20px"
+            - flash.each do |kind, messages|
+              - [messages].flatten.each do |msg|
+                = content_tag :div, class: "alert alert-#{kind == 'notice' ? 'success' : 'error'}" do
+                  button.close type="button" data-dismiss="alert"
+                    i.icon-remove
+                  |  
+                  i.icon-large class="icon-#{kind == 'notice' ? 'ok-sign' : 'remove-sign'}"
+                  |  
+                  = msg
+        = yield
+
+    /! footer
+    footer#footer
+      .text-center.padder.clearfix
+        p
+          small &copy; FirstAdminPanel 2015
