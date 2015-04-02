@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = FirstAdminPanel::VERSION
   s.authors     = ['Alexander Borovykh']
   s.email       = ['immaculate.pine@gmail.com']
-  s.homepage    = 'TODO'
+  s.homepage    = 'https://bitbucket.org/ImmaculatePine/first_admin_panel'
   s.summary     = 'Admin panel template'
   s.description = 'Ruby gem that adds assets, layouts and generators for admin panel'
   s.license     = 'MIT'
