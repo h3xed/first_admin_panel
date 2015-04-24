@@ -2,10 +2,10 @@ PATH
   remote: .
   specs:
     first_admin_panel (0.0.1)
-      coffee-rails (~> 4.0.0)
+      coffee-rails (> 4.0.0)
       jquery-rails
       rails (> 4.0, < 5.0)
-      sass-rails (~> 4.0.3)
+      sass-rails (> 4.0.3)
       slim
 
 GEM
