@@ -2,7 +2,7 @@ doctype html
 html lang="en" 
   head
     meta charset="utf-8" /
-    title= FirstAdminPanel.config.name
+    title=t '.title'
     meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" /
     = stylesheet_link_tag "first_admin_panel/application"
     = javascript_include_tag "first_admin_panel/application"
@@ -10,7 +10,7 @@ html lang="en"
   body
     /! header
     header#header.navbar.bg.bg-black
-      a.navbar-brand href="/"= FirstAdminPanel.config.name
+      a.navbar-brand href="/"=t '.brand'
 
     section#content
       .container
@@ -33,4 +33,4 @@ html lang="en"
     footer#footer
       .text-center.padder.clearfix
         p
-          small &copy; #{FirstAdminPanel.config.name} 2015
+          small= '.copyright'

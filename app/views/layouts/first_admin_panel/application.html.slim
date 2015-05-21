@@ -2,7 +2,7 @@ doctype html
 html lang="en"
   head
     meta charset="utf-8"
-    title= FirstAdminPanel.config.name
+    title=t '.title'
     meta content="width=device-width, maximum-scale=1.0, user-scalable=yes" name="viewport"
     link href='/favicon.ico' rel="shortcut icon" type="image/x-icon"
     = stylesheet_link_tag "first_admin_panel/application"
@@ -12,13 +12,13 @@ html lang="en"
     /! header
     header#header.navbar
       = render partial: 'first_admin_panel/current_user'
-      = link_to FirstAdminPanel.config.name, admin_root_path, class: 'navbar-brand'
+      = link_to t('.brand'), admin_root_path, class: 'navbar-brand'
       ul.nav.navbar-nav.hidden-xs
         li
           .m-t-small
             a.btn.btn-sm.btn-info href="/"
               i.icon-external-link
-              | Перейти на сайт
+              =t '.back_to_website'
       button.btn.btn-link.pull-left.nav-toggle.visible-xs data-target="body" data-toggle="class:slide-nav slide-nav-left" type="button"
         i.icon-reorder.icon-xlarge.text-default
     /! / header
@@ -48,4 +48,4 @@ html lang="en"
     footer#footer
       .text-center.padder.clearfix
         p
-          small &copy; #{FirstAdminPanel.config.name} 2015
+          small=t '.copyright'

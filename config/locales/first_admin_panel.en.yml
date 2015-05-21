@@ -1,0 +1,13 @@
+en:
+  layouts:
+    first_admin_panel:
+      application:
+        title: First Admin Panel
+        brand: First Admin Panel
+        back_to_website: Back to website
+        copyright: © First Admin Panel 2015
+
+      login:
+        title: First Admin Panel
+        brand: First Admin Panel
+        copyright: © First Admin Panel 2015
