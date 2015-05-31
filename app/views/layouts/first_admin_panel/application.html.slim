@@ -35,11 +35,11 @@ html lang="en"
           .flashes style="padding-top: 20px"
             - flash.each do |kind, messages|
               - [messages].flatten.each do |msg|
-                = content_tag :div, class: "alert alert-#{kind == 'notice' ? 'success' : 'error'}" do
+                = content_tag :div, class: "alert alert-#{kind.to_s == 'notice' ? 'success' : 'error'}" do
                   button.close type="button" data-dismiss="alert"
                     i.icon-remove
                   |  
-                  i.icon-large class="icon-#{kind == 'notice' ? 'ok-sign' : 'remove-sign'}"
+                  i.icon-large class="icon-#{kind.to_s == 'notice' ? 'ok-sign' : 'remove-sign'}"
                   |  
                   = msg
         = yield
