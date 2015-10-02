@@ -12,13 +12,6 @@ legend{
   margin-top: 50px;
 }
 
-.control-label > abbr{
-  display: none;
-}
-.c-autosubmit-forms{
-
-}
-
 .c-autosubmit-forms.__op-50{
   opacity: 0.5;
   filter: alpha(opacity=50);
